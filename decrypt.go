@@ -4,19 +4,10 @@ import (
   "crypto/aes"
   "crypto/cipher"
   "encoding/base64"
-  "github.com/joho/godotenv"
-  "log"
-  "os"
 )
 
 func decrypt(toDecrypt string) (string, error) {
-  err := godotenv.Load(".env")
-  if err != nil {
-    log.Fatalf("Error loading environment variables file")
-    return "", err     
-  }   
-  
- KEY := os.Getenv("KEY")
+ KEY := "abc&1*~#^2^#s0^=)^^7%b34"
  
  block, err := aes.NewCipher([]byte(KEY))
  if err != nil {
